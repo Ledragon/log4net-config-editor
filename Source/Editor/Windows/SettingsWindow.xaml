@@ -26,6 +26,14 @@
             <Button Click="CloseClick" Margin="2.5,5,0,0">Close</Button>
         </StackPanel>
 
+        <GroupBox DockPanel.Dock="Top" Header="Log File Base Directory">
+            <DockPanel Margin="5">
+                <Button DockPanel.Dock="Right" Margin="5,0,0,0" Click="OpenClick">Open</Button>
+                <TextBlock DockPanel.Dock="Bottom" Foreground="Gray" FontStyle="Italic">Setting a base directory for log files enables the application to open them from the UI.</TextBlock>
+                <TextBox Height="22" IsReadOnly="True"></TextBox>
+            </DockPanel>
+        </GroupBox>
+
         <DockPanel>
             <Grid DockPanel.Dock="Top">
                 <Grid.ColumnDefinitions>

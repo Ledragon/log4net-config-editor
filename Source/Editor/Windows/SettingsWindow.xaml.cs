@@ -47,6 +47,11 @@ namespace Editor.Windows
             }
         }
 
+        private void OpenClick(object sender, RoutedEventArgs e)
+        {
+            //folder browser
+        }
+
         private void AddClick(object sender, RoutedEventArgs e)
         {
             mMappings.Add(new AppenderMapping { Custom = xCustom.Text, Mapped = (string)xMapped.SelectedItem });
@@ -81,6 +86,6 @@ namespace Editor.Windows
         private void CloseClick(object sender, RoutedEventArgs e)
         {
             Close();
-        }
+        }        
     }
 }

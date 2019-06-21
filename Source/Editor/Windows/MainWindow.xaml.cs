@@ -304,5 +304,15 @@ namespace Editor.Windows
             SettingsWindow w = new SettingsWindow { Owner = this };
             w.ShowDialog();
         }
+
+        private void OpenLogFileClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OpenLogFolderClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

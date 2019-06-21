@@ -104,6 +104,7 @@
             <DataGrid.Resources>
                 <Converters:ReferencesToImageConverter x:Key="RefToImageConv"/>
                 <Converters:ChildTypeToVisibilityConverter x:Key="ChildTypeVisConv"/>
+                <Converters:ShowLogFileOptionsConverter x:Key="LogFileOptnsConv"/>
 
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick" Handler="EditAppenderOnClick"/>
@@ -119,6 +120,29 @@
                             <StackPanel Orientation="Horizontal" Visibility="{Binding Converter={StaticResource ChildTypeVisConv}}">
                                 <Image Margin="5,0" Height="16" Width="16" Source="{Binding IncomingReferences, Converter={StaticResource RefToImageConv}}"/>
                                 <Label Content="{Binding IncomingReferences}" VerticalAlignment="Center"/>                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Options">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Visibility="{Binding Converter={StaticResource LogFileOptnsConv}}">
+                                <StackPanel.Resources>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Width" Value="20"/>
+                                        <Setter Property="Height" Value="20"/>
+                                        <Setter Property="Margin" Value="2,0"/>
+                                    </Style>
+                                </StackPanel.Resources>
+                                <Button ToolTip="Opens the log file associated with this appender"
+                                        Click="OpenLogFileClick">
+                                    <Image Width="16" Height="16" Margin="-4,0,0,0" Source="../Images/file-zoom-out.png"/>
+                                </Button>
+                                <Button ToolTip="Opens the directory containing the log file associated with this appender"
+                                        Click="OpenLogFolderClick">
+                                    <Image Width="12" Height="12" Source="../Images/folder-grey.png"/>
+                                </Button>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
