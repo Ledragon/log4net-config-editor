@@ -77,6 +77,7 @@ namespace Editor.Windows
                 xml = textWriter.ToString();
             }
 
+            Settings.Default.LogFileBaseDir = xLogFileBaseDirTb.Text;
             Settings.Default.AppenderMappings = xml;
             Settings.Default.Save();
 
@@ -86,6 +87,6 @@ namespace Editor.Windows
         private void CloseClick(object sender, RoutedEventArgs e)
         {
             Close();
-        }        
+        }
     }
 }

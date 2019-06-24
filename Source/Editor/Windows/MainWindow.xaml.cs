@@ -15,6 +15,7 @@ using Editor.HistoryManager;
 using Editor.Interfaces;
 using Editor.Models.Base;
 using Editor.Models.ConfigChildren;
+using Editor.Properties;
 using Editor.SaveStrategies;
 using Editor.Utilities;
 using Editor.Windows.SizeLocation;
@@ -294,7 +295,7 @@ namespace Editor.Windows
                                                             DefinitionFactory.Create(descriptor, configuration),
                                                             WindowSizeLocationFactory.Create(descriptor),
                                                             new AppendReplaceSaveStrategy(configuration))
-                { Owner = this };
+            { Owner = this };
             elementWindow.ShowDialog();
             LoadFromRam();
         }
@@ -307,12 +308,45 @@ namespace Editor.Windows
 
         private void OpenLogFileClick(object sender, RoutedEventArgs e)
         {
+            string filePath = GetFilePath(sender);
 
+            if (File.Exists(filePath))
+            {
+                Process.Start(filePath);
+            }
         }
 
         private void OpenLogFolderClick(object sender, RoutedEventArgs e)
         {
+            string filePath = GetFilePath(sender);
+            string dirPath = Path.GetDirectoryName(filePath);
 
+            if (File.Exists(filePath))
+            {
+                Process.Start("explorer.exe", $"/select, \"{filePath}\"");
+            }
+            else if (Directory.Exists(dirPath))
+            {
+                Process.Start(dirPath);
+            }
+        }
+
+        private string GetFilePath(object sender)
+        {
+            AppenderModel appender = (AppenderModel)((Button)sender).DataContext;
+
+            IElementConfiguration configuration = mConfigurationXml.CreateElementConfigurationFor(appender, appender.Node.Name);
+
+            IElementDefinition elementDefinition = DefinitionFactory.Create(appender.Descriptor, configuration);
+
+            elementDefinition.Initialize();
+
+            foreach (IProperty prop in elementDefinition.Properties)
+            {
+                prop.Load(appender.Node);
+            }
+
+            return Path.Combine(Settings.Default.LogFileBaseDir, elementDefinition.Properties.OfType<ConfigProperties.File>().Single().FilePath);
         }
     }
 }

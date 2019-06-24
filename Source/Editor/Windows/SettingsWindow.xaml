@@ -30,7 +30,7 @@
             <DockPanel Margin="5">
                 <Button DockPanel.Dock="Right" Margin="5,0,0,0" Click="OpenClick">Open</Button>
                 <TextBlock DockPanel.Dock="Bottom" Foreground="Gray" FontStyle="Italic">Setting a base directory for log files enables the application to open them from the UI.</TextBlock>
-                <TextBox Height="22" IsReadOnly="True"></TextBox>
+                <TextBox x:Name="xLogFileBaseDirTb" Height="22"></TextBox>
             </DockPanel>
         </GroupBox>
 
