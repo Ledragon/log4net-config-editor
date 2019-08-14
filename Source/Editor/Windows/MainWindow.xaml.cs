@@ -361,13 +361,13 @@ namespace Editor.Windows
             LoadFromRam();
         }
 
-        private void CopyAppenderToClipboard(object sender, RoutedEventArgs e)
+        private void CopyElementToClipboard(object sender, RoutedEventArgs e)
         {
-            AppenderModel appender = (AppenderModel)((Button)sender).DataContext;
+            ModelBase model = (ModelBase)((Button)sender).DataContext;
 
-            Clipboard.SetText(appender.Node.OuterXml);
+            Clipboard.SetText(model.Node.OuterXml);
 
-            mToastService.ShowSuccess("Appender XML copied to clipboard");
+            mToastService.ShowSuccess("XML copied to clipboard");
         }
 
         private void OpenLogFileClick(object sender, RoutedEventArgs e)
