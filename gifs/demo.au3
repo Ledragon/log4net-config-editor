@@ -1,5 +1,7 @@
 #include <AutoItConstants.au3>
 
+#RequireAdmin
+
 ;Title match mode = start
 Opt("WinTitleMatchMode", 1)
 
@@ -33,14 +35,14 @@ $pos = WinGetPos($title)
 $mainWindowRightButtonsX = $pos[0] + $pos[2] - 70
 
 ;Click on Add Root
-MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 100, 1, $mouseSpeed)
+MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 130, 1, $mouseSpeed)
 
 ;--------------------------------- Root Logger
 
 WinWaitActive("Root Logger")
 $pos = WinGetPos("Root Logger")
 
-;Click on Save
+;Click on Save (Logger Window)
 MouseClick($MOUSE_CLICK_LEFT, $pos[0] + $pos[2] - 210, $pos[1] + 325, 1, $mouseSpeed)
 
 ;--------------------------------- Main
@@ -49,10 +51,10 @@ WinWaitActive($title)
 $pos = WinGetPos($title)
 
 ;Click on Add Appender
-MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 80, 1, $mouseSpeed)
+MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 110, 1, $mouseSpeed)
 
 ;Click on console
-MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 105, 1, $mouseSpeed)
+MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 135, 1, $mouseSpeed)
 
 ;--------------------------------- Console Appender
 
@@ -87,7 +89,7 @@ Send("loggerName")
 
 $pos = WinGetPos("Logger Match Filter")
 
-;Click on Save
+;Click on Save (Logger Match Filter Window)
 MouseClick($MOUSE_CLICK_LEFT, $pos[0] + $pos[2] - 210, $pos[1] + 100, 1, $mouseSpeed)
 
 ;--------------------------------- Console Appender
@@ -106,7 +108,7 @@ MouseClick($MOUSE_CLICK_LEFT, $pos[0] + 90, $pos[1] + 375, 1, $mouseSpeed)
 
 Sleep(250)
 
-;Click on Save (relative to center bottom)
+;Click on Save (relative to center bottom of Console Appender Window)
 MouseClick($MOUSE_CLICK_LEFT, ($pos[0] + $pos[2] / 2) - 50, $pos[1] + $pos[3] - 25, 1, $mouseSpeed)
 
 ;--------------------------------- Main
@@ -114,25 +116,25 @@ MouseClick($MOUSE_CLICK_LEFT, ($pos[0] + $pos[2] / 2) - 50, $pos[1] + $pos[3] - 
 SaveMain()
 
 ;Click on appender in grid
-MouseClick($MOUSE_CLICK_LEFT, $pos[0] + $pos[2] - 450, $pos[1] + 110, 1, $mouseSpeed)
+MouseClick($MOUSE_CLICK_LEFT, $pos[0] + $pos[2] - 450, $pos[1] + 140, 1, $mouseSpeed)
 
 ;Click on Remove Ref
-MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 235, 1, $mouseSpeed)
+MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 265, 1, $mouseSpeed)
 
 SaveMain()
 
 ;Click on appender in grid
-MouseClick($MOUSE_CLICK_LEFT, $pos[0] + $pos[2] - 450, $pos[1] + 110, 1, $mouseSpeed)
+MouseClick($MOUSE_CLICK_LEFT, $pos[0] + $pos[2] - 450, $pos[1] + 140, 1, $mouseSpeed)
 
 ;Ctrl + Click on root in grid so that both are selected
 Send("{CTRLDOWN}")
-MouseClick($MOUSE_CLICK_LEFT, $pos[0] + $pos[2] - 450, $pos[1] + 125, 1, $mouseSpeed)
+MouseClick($MOUSE_CLICK_LEFT, $pos[0] + $pos[2] - 450, $pos[1] + 155, 1, $mouseSpeed)
 Send("{CTRLUP}")
 
 Sleep(250)
 
 ;Click on Remove
-MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 210, 1, $mouseSpeed)
+MouseClick($MOUSE_CLICK_LEFT, $mainWindowRightButtonsX, $pos[1] + 240, 1, $mouseSpeed)
 
 SaveMain()
 
