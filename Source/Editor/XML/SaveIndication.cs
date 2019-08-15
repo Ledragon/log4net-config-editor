@@ -4,11 +4,11 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using SystemInterface.Xml;
 using Editor.Enums;
 using Editor.Interfaces;
 using Editor.Models.Base;
 using log4net.Core;
+using SystemInterface.Xml;
 
 namespace Editor.XML
 {
@@ -37,9 +37,14 @@ namespace Editor.XML
         {
             SaveState = SaveState.Saving;
 
-            await base.SaveAsync();
-
-            ReevaluateSaveState();
+            try
+            {
+                await base.SaveAsync();
+            }
+            finally
+            {
+                ReevaluateSaveState();
+            }
         }
 
         public override void RemoveChild(ModelBase child)
