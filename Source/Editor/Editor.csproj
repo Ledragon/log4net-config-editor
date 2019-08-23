@@ -89,8 +89,8 @@
     <Compile Include="ConfigProperties\DatePattern.cs" />
     <Compile Include="ConfigProperties\RemoteIdentity.cs" />
     <Compile Include="Converters\ShowLogFileOptionsConverter.cs" />
+    <Compile Include="Enums\ChangeType.cs" />
     <Compile Include="Enums\SaveState.cs" />
-    <Compile Include="Interfaces\IAcceptAppenderRef.cs" />
     <Compile Include="Interfaces\ICanLoadAndSaveXml.cs" />
     <Compile Include="Models\Base\ModelBase.cs" />
     <Compile Include="ConfigProperties\ForeColor.cs" />
@@ -173,9 +173,6 @@
     <Compile Include="Descriptors\MappingDescriptor.cs" />
     <Compile Include="Descriptors\ParamDescriptor.cs" />
     <Compile Include="Descriptors\RendererDescriptor.cs" />
-    <Compile Include="Enums\ChangeType.cs" />
-    <Compile Include="Enums\FilterType.cs" />
-    <Compile Include="Enums\LoggerType.cs" />
     <Compile Include="Enums\Update.cs" />
     <Compile Include="HistoryManager\ISettingManager.cs" />
     <Compile Include="HistoryManager\SettingManager.cs" />
@@ -215,10 +212,8 @@
     <Compile Include="Windows\SizeLocation\Size.cs" />
     <Compile Include="Windows\SizeLocation\WindowSizeLocationFactory.cs" />
     <Compile Include="Models\ConfigChildren\AppenderModel.cs" />
-    <Compile Include="Enums\AppenderType.cs" />
     <Compile Include="Descriptors\FilterDescriptor.cs" />
     <Compile Include="Descriptors\LayoutDescriptor.cs" />
-    <Compile Include="Enums\LayoutType.cs" />
     <Compile Include="Models\FilterModel.cs" />
     <Compile Include="Models\FixModel.cs" />
     <Compile Include="Models\ConfigChildren\LoggerModel.cs" />
@@ -344,6 +339,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\edit-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Editor.Enums\Editor.Enums.csproj">
+      <Project>{4f8966e8-ef41-440d-8d9f-95bf77d898db}</Project>
+      <Name>Editor.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor.Interfaces\Editor.Interfaces.csproj">
+      <Project>{fd7dfe1b-0f1c-4bec-8abe-34a6a5ad9c92}</Project>
+      <Name>Editor.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Editor.XML\Editor.XML.csproj">
+      <Project>{cee46394-08c2-47e6-81ad-09ed93e4b5f4}</Project>
+      <Name>Editor.XML</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
