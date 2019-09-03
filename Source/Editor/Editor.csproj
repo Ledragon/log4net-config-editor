@@ -349,10 +349,6 @@
       <Project>{fd7dfe1b-0f1c-4bec-8abe-34a6a5ad9c92}</Project>
       <Name>Editor.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Editor.XML\Editor.XML.csproj">
-      <Project>{cee46394-08c2-47e6-81ad-09ed93e4b5f4}</Project>
-      <Name>Editor.XML</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

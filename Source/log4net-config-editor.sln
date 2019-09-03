@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor", "Editor\Editor.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor.Test", "Editor.Test\Editor.Test.csproj", "{6D371AB7-DB2D-43EF-8CE2-11BAECDD347F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor.XML", "Editor.XML\Editor.XML.csproj", "{CEE46394-08C2-47E6-81AD-09ED93E4B5F4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor.Interfaces", "Editor.Interfaces\Editor.Interfaces.csproj", "{FD7DFE1B-0F1C-4BEC-8ABE-34A6A5AD9C92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor.Enums", "Editor.Enums\Editor.Enums.csproj", "{4F8966E8-EF41-440D-8D9F-95BF77D898DB}"
@@ -27,10 +25,6 @@ Global
 		{6D371AB7-DB2D-43EF-8CE2-11BAECDD347F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D371AB7-DB2D-43EF-8CE2-11BAECDD347F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D371AB7-DB2D-43EF-8CE2-11BAECDD347F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CEE46394-08C2-47E6-81AD-09ED93E4B5F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEE46394-08C2-47E6-81AD-09ED93E4B5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEE46394-08C2-47E6-81AD-09ED93E4B5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEE46394-08C2-47E6-81AD-09ED93E4B5F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FD7DFE1B-0F1C-4BEC-8ABE-34A6A5AD9C92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FD7DFE1B-0F1C-4BEC-8ABE-34A6A5AD9C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD7DFE1B-0F1C-4BEC-8ABE-34A6A5AD9C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
